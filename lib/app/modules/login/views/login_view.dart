@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mvc/app/widgets/custome_button.dart';
+import 'package:mvc/app/widgets/custome_textfeild.dart';
 
 
 class Login extends StatelessWidget {
@@ -26,37 +28,18 @@ class Login extends StatelessWidget {
           ),
           ),
           SizedBox(height: 20),
-          TextFormField(
-            decoration: InputDecoration(
-              labelText: "Email",
-              border:OutlineInputBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-          ),
+          CustomTextField(
+            controller: TextEditingController(),
+            label: "Email",
+           ),
           SizedBox(height: 20),
-          TextFormField(
-            obscureText: true,
-            decoration: InputDecoration(labelText: "Password",
-             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(20),
-             ),
-             ),
-          ),
+          CustomTextField(
+            controller: TextEditingController(),
+            label: "Password"),
           SizedBox(height: 20),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.deepPurpleAccent,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
-            onPressed:(
-            ){},
-             child: Text("Login", style: TextStyle(
-              color: Colors.white,
-             ),)
-             ),
+          CustomButton(label: "Login" , onPressed:(){
+
+          }),
           ],
         ),
       ),

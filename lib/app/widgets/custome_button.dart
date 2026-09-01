@@ -1,42 +1,33 @@
 import 'package:flutter/material.dart';
 
-/// One reusable text field used everywhere in the app (login, signup,
-/// future forms) so styling and behavior stay consistent.
-class CustomTextField extends StatelessWidget {
-  final TextEditingController controller;
+/// Reusable primary button that already knows how to show a loading
+/// spinner, so controllers just flip an `isLoading` bool.
+class CustomButton extends StatelessWidget {
   final String label;
-  final String? hint;
-  final bool obscureText;
-  final TextInputType keyboardType;
-  final String? Function(String?)? validator;
-  final Widget? suffixIcon;
-  final Widget? prefixIcon;
+  final VoidCallback? onPressed;
+  final bool isLoading;
 
-  const CustomTextField({
+  const CustomButton({
     super.key,
-    required this.controller,
     required this.label,
-    this.hint,
-    this.obscureText = false,
-    this.keyboardType = TextInputType.text,
-    this.validator,
-    this.suffixIcon,
-    this.prefixIcon,
+    required this.onPressed,
+    this.isLoading = false,
   });
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      obscureText: obscureText,
-      keyboardType: keyboardType,
-      validator: validator,
-      decoration: InputDecoration(
-        labelText: label,
-        hintText: hint,
-        prefixIcon: prefixIcon,
-        suffixIcon: suffixIcon,
-      ),
+    return ElevatedButton(
+      onPressed: isLoading ? null : onPressed,
+      child: isLoading
+          ? const SizedBox(
+              height: 22,
+              width: 22,
+              child: CircularProgressIndicator(
+                strokeWidth: 2.4,
+                color: Colors.white,
+              ),
+            )
+          : Text(label, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600)),
     );
   }
 }
