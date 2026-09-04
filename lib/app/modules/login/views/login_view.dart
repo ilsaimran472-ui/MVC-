@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:mvc/app/widgets/custome_button.dart';
 import 'package:mvc/app/widgets/custome_textfeild.dart';
-
 
 class Login extends StatelessWidget {
   const Login({super.key});
@@ -9,7 +9,7 @@ class Login extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 206, 200, 212),
+      backgroundColor: Colors.white,
       body: Padding(padding: const EdgeInsets.only(left: 60.0, right: 60.0),
       child: Center(
         child: Column(
@@ -28,6 +28,7 @@ class Login extends StatelessWidget {
           ),
           ),
           SizedBox(height: 20),
+          SizedBox(height: 20),
           CustomTextField(
             controller: TextEditingController(),
             label: "Email",
@@ -40,6 +41,7 @@ class Login extends StatelessWidget {
           CustomButton(label: "Login" , onPressed:(){
 
           }),
+          
           ],
         ),
       ),
