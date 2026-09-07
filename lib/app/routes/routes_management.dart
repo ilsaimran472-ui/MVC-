@@ -1,12 +1,8 @@
-import 'package:get/get.dart';
-import 'package:mvc/app/modules/login/views/login_view.dart';
-import 'package:mvc/app/routes/app_routes.dart';
+abstract class Routes {
+  Routes._();
 
-class AppPages{
-  AppPages._();
-
-  static final pages = <GetPage>[
-    GetPage(name: AppRoutes.Login, page: () => const Login()),
-    
-  ];
+  static const SPLASH = '/splash';
+  static const LOGIN = '/login';
+  static const SIGNUP = '/signup';
+  static const HOME = '/home';
 }

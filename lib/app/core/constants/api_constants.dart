@@ -11,7 +11,7 @@ class ApiConstants {
   static const String editUser = "users/{{userId}}";
   static const String deleteUser = "users/{{userId}}";
   static const String cart = "users/{{userId}}/carts"; 
-
+  static const String register = '/register';
   //products
   static const String allproduct = "products"; 
   static const String newproduct = "products/add"; 

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/route_manager.dart';
+import 'package:mvc/app/modules/login/controllers/login_controler.dart';
 import 'package:mvc/app/widgets/custome_button.dart';
 import 'package:mvc/app/widgets/custome_textfeild.dart';
 
-class Login extends StatelessWidget {
+class Login extends GetView<LoginController>{
   const Login({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<LoginController>();
     return Scaffold(
       backgroundColor: Colors.white,
       body: Padding(padding: const EdgeInsets.only(left: 60.0, right: 60.0),
